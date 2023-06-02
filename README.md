@@ -19,11 +19,12 @@ mypkg.ServiceB
 mypkg.ServiceC
 ```
 
-In this case, `mypkg.ServiceD` is omiitted.
+In this case, `mypkg.ServiceD` is omiitted. ServiceD.kt in `src/alhpaDebug` also has `@AutoService(MyService::class)` annotation, so it should be included in `mypkg.MyService` file.
 
 ## how to fix problem
 
-Just update android gradle plugin to latest version in build.gradle like below.
+Maybe this is bug of android gradle plugin 7.3.1. So, just update android gradle plugin to latest version in `build.gradle` like below and you can see correct result.
+
 ```
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
@@ -44,4 +45,5 @@ mypkg.ServiceD
 ```
 
 You can see `mypkg.ServiceD` now.
+
 
